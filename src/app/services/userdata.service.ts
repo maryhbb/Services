@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
@@ -6,14 +7,14 @@ import { Injectable } from '@angular/core';
 export class UserdataService {
 
   constructor() { }
-user(){
-  return [
-    {name: 'Mani', age: 15, email: 'mani@test.com'},
-    {name: 'Arvin', age: 14, email: 'arvin@test.com'},
-    {name: 'Radin', age: 12, email: 'radin@test.com'},
-    {name: 'Johannes', age: 38, email: 'johan@test.com'},
 
-  ]
-}
+  public user(): Array<User> {
+    return [
+      new User('Mani', 15, 'mani@test.com'),
+      new User('Arvin', 14, 'mani@test.com'),
+      new User('Radin', 12, 'mani@test.com'),
+      new User('Johannes', 38, 'mani@test.com')
+    ]
+  }
 
 }
