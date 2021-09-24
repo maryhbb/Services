@@ -14,7 +14,7 @@ export class UserService {
     new User('Radin', 12, 'mani@test.com'),
   ];
 
-  public getUsers(): Array<User> {
+  public getUsers(): User[] {
     return this.usersList;
   }
 
