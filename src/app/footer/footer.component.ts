@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { User } from '../services/user';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -6,14 +7,18 @@ import { UserService } from '../services/user.service';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent  {
 
-  users: any;
-  constructor(private userService: UserService) { 
-    this.users = userService.getUsers();
+  // public users: User[];
+  constructor(private userService: UserService) {
+    // this.users = userService.getUsers();
   }
 
-  ngOnInit(): void {
+  public getUsers(): User[] {
+   return this.userService.getUsers();
   }
+
+
 
 }
+
