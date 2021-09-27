@@ -5,20 +5,12 @@ import { UserService } from '../services/user.service';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.css']
+  styleUrls: ['./footer.component.css'],
 })
-export class FooterComponent  {
-
-  // public users: User[];
-  constructor(private userService: UserService) {
-    // this.users = userService.getUsers();
-  }
+export class FooterComponent {
+  constructor(private userService: UserService) {}
 
   public getUsers(): User[] {
-   return this.userService.getUsers();
+    return this.userService.getUsers();
   }
-
-
-
 }
-

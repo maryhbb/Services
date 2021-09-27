@@ -1,36 +1,17 @@
-<h1>{{title}}</h1>
-<div><ul>
-  <li *ngFor= 'let item of users'>
-    Name is:  {{item.name}} and age is: {{item.age}} years old.
-  </li>
-</ul>
-</div>
-<br>
-
+<h1>{{ title }}</h1>
 <div>
-  <form [formGroup]='userForm' (ngSubmit)="onSubmit()">
-  
-  <label>Enter your Name: </label>
-  <input type="text" formControlName='name'>
-  <p *ngIf="userForm.get('name').dirty && userForm.get('name').hasError('required')" style="color: red;">Please enter a Valid Name!!!</p>
-  <br>
-  <br>
+  <!-- (want too keep this option as well to learn) -->
+  <!-- <app-list [list]="users" [properties]="['age']" (onRemoveClick)="onRemove($event)" (onUpdateClick)="onUpdate($event)"></app-list> -->
 
-
-  <label>Enter your Age: </label>
-  <input  type="text" formControlName='age'>
-  <p *ngIf="userForm.get('age').dirty && userForm.get('age').hasError('required')" style="color: red;">Please enter a Valid Number!!!</p>
-  <br>
-  <br>
-
-  <label>Enter your Email: </label>
-  <input type="text" formControlName='email'>
-  <p *ngIf="userForm.get('email').dirty && userForm.get('email').hasError('required')" style="color: red;" >Please enter a Valid Email!!!</p>
-  <br>
-  <br>
-
-
-  <button type="submit" [disabled]="userForm.invalid">Add User</button>
-</form>
+  <app-list
+    [list]="users"
+    properties="name,age"
+    (onRemoveClick)="onRemove($event)"
+    (onUpdateClick)="onUpdate($event)"
+  ></app-list>
+</div>
+<br />
+<div>
+  <app-user-form [user]="user" (submitted)="onSubmit($event)"></app-user-form>
 </div>
 <app-footer></app-footer>

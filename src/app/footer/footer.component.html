@@ -1,11 +1,4 @@
 <div class="footer">
-    <h1>
-        Footer
-    </h1>
-
-    <ul>
-        <li *ngFor = "let item of getUsers()">
-            {{item.email}}
-        </li>
-    </ul>
+  <h1>Footer</h1>
+  <app-list [list]="getUsers()" properties="email"></app-list>
 </div>
