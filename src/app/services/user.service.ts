@@ -2,19 +2,22 @@ import { Injectable } from '@angular/core';
 import { User } from './user';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
+  constructor() {}
 
-  constructor() { }
+  usersList: User[] = [
+    new User('Mani', 15, 'mani@test.com'),
+    new User('Arvin', 14, 'arvin@test.com'),
+    new User('Radin', 12, 'radin@test.com'),
+  ];
 
-  public getUsers(): Array<User> {
-    return [
-      new User('Mani', 15, 'mani@test.com'),
-      new User('Arvin', 14, 'mani@test.com'),
-      new User('Radin', 12, 'mani@test.com'),
-      new User('Johannes', 38, 'Johann@test.com'),
-    ];
+  public getUsers(): User[] {
+    return this.usersList;
   }
 
+  public addUser(newUser: User) {
+    this.usersList.push(newUser);
+  }
 }

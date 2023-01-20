@@ -1,0 +1,45 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <label>Enter your Name: </label>
+  <input type="text" formControlName="name" />
+  <p
+    *ngIf="
+      userForm.get('name').dirty && userForm.get('name').hasError('required')
+    "
+    style="color: red"
+  >
+    Please enter a Valid Name!!!
+  </p>
+
+  <br />
+  <br />
+
+  <label>Enter your Age: </label>
+  <input type="text" formControlName="age" />
+  <p
+    *ngIf="
+      userForm.get('age').dirty && userForm.get('age').hasError('required')
+    "
+    style="color: red"
+  >
+    Please enter a Valid Number!!!
+  </p>
+
+  <br />
+  <br />
+
+  <label>Enter your Email: </label>
+  <input type="text" formControlName="email" />
+  <p
+    *ngIf="
+      userForm.get('email').dirty && userForm.get('email').hasError('required')
+    "
+    style="color: red"
+  >
+    Please enter a Valid Email!!!
+  </p>
+
+  <br />
+  <br />
+
+  <button type="submit">Add User</button>
+</form>

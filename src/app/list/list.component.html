@@ -1,0 +1,9 @@
+<li *ngFor="let item of list; let i = index">
+  <ng-container *ngFor="let p of _properties; let last = last">
+    {{ item[p] }}
+    <ng-container *ngIf="!last">-</ng-container>
+  </ng-container>
+
+  <button (click)="_onRemoveClick(item, i)">Remove</button>
+  <button (click)="_onUpdateClick(item)">Update</button>
+</li>

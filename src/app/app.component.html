@@ -1,5 +1,17 @@
-<h1>{{title}}</h1>
-<ul>
-  <li *ngFor= 'let item of users'>Name is:  {{item.name}} and age is: {{item.age}} years old.</li>
-</ul>
+<h1>{{ title }}</h1>
+<div>
+  <!-- (want too keep this option as well to learn) -->
+  <!-- <app-list [list]="users" [properties]="['age']" (onRemoveClick)="onRemove($event)" (onUpdateClick)="onUpdate($event)"></app-list> -->
+
+  <app-list
+    [list]="users"
+    properties="name,age"
+    (onRemoveClick)="onRemove($event)"
+    (onUpdateClick)="onUpdate($event)"
+  ></app-list>
+</div>
+<br />
+<div>
+  <app-user-form [user]="user" (submitted)="onSubmit($event)"></app-user-form>
+</div>
 <app-footer></app-footer>
