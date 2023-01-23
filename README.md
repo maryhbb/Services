@@ -1,4 +1,4 @@
-# ng-shopping-cart
+# Angular Services
 
 ![](https://github.com/maryhbb/Servuces/actions/workflows/workflow.yml/badge.svg)
 
